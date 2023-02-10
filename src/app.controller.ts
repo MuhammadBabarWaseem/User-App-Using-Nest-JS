@@ -1,38 +1,6 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Req,
-  Param,
-  Delete,
-  Patch,
-} from '@nestjs/common';
-import { Request } from 'express';
+import { Controller } from '@nestjs/common';
+
+// 49:32 https://www.youtube.com/watch?v=Mgr5_r70OJQ
 
 @Controller()
-export class AppController {
-  @Get()
-  getUsers() {
-    return { name: 'Babar', email: 'mbabarwaseem@gmail.com' };
-  }
-
-  @Post()
-  createUser(@Req() req: Request) {
-    return req.body;
-  }
-
-  @Patch('/:userId')
-  updateUser(@Req() req: Request) {
-    return req.body;
-  }
-
-  @Get('/:userId')
-  getUserById(@Param() params: { userId: number }) {
-    return params;
-  }
-
-  @Delete('/:userId')
-  deleteUserById(@Param() params: { userId: number }) {
-    return params;
-  }
-}
+export class AppController {}
