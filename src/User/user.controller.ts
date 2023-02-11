@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import {
   Controller,
   Get,
@@ -11,28 +12,31 @@ import { Request } from 'express';
 
 @Controller('/user')
 export class userController {
+  // created a constructor to get the functions from user.service.ts file
+  constructor(private userService: UserService) {}
+
   @Get()
   getUsers() {
-    return { name: 'Babar', email: 'mbabarwaseem@gmail.com' };
+    return this.userService.getUser();
   }
 
   @Post()
   createUser(@Req() req: Request) {
-    return req.body;
+    return this.userService.create(req);
   }
 
   @Patch('/:userId')
-  updateUser(@Req() req: Request) {
-    return req.body;
+  updateUser(@Param() param: { userId: number }, @Req() req: Request) {
+    return this.userService.update(req, param);
   }
 
   @Get('/:userId')
-  getUserById(@Param() params: { userId: number }) {
-    return params;
+  getUserById(@Param() param: { userId: number }) {
+    return this.userService.getUserById(param);
   }
 
   @Delete('/:userId')
-  deleteUserById(@Param() params: { userId: number }) {
-    return params;
+  deleteUserById(@Param() param: { userId: number }) {
+    return this.userService.delete(param);
   }
 }
