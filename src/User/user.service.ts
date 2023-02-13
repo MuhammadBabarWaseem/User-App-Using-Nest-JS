@@ -15,9 +15,11 @@ export class UserService {
   getUser() {
     return this.userRepository.find();
   }
+
   create(createUserDto: createUserDto) {
     return this.userRepository.save(createUserDto);
   }
+
   update(updateUserDto: updateUserDto, userId: number) {
     return this.userRepository.update(userId, updateUserDto);
   }
@@ -25,6 +27,11 @@ export class UserService {
   getUserById(userId: number) {
     return this.userRepository.findOne({ where: { id: userId } });
   }
+
+  findByEmail(email: string) {
+    return this.userRepository.findOne({ where: { email: email } });
+  }
+
   delete(userId: number) {
     return this.userRepository.delete(userId);
   }
