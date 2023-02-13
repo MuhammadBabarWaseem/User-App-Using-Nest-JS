@@ -12,19 +12,20 @@ export class UserService {
     private userRepository: Repository<User>,
   ) {}
 
-  getUser(): Promise<User[]> {
+  getUser() {
     return this.userRepository.find();
   }
   create(createUserDto: createUserDto) {
-    return createUserDto;
+    return this.userRepository.save(createUserDto);
   }
   update(updateUserDto: updateUserDto, userId: number) {
-    return { updateUserDto, userId };
+    return this.userRepository.update(userId, updateUserDto);
   }
+
   getUserById(userId: number) {
-    return { userId };
+    return this.userRepository.findOne({ where: { id: userId } });
   }
   delete(userId: number) {
-    return { userId };
+    return this.userRepository.delete(userId);
   }
 }
