@@ -3,7 +3,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 <p align="center">A Backend API For User App</p>
-<strong align="center">In this app i have used these basic functionalities:</strong>
+<strong align="center">In this app i have used these basic functionalities of Nest JS:</strong>
 <ul>
  <li>Nest Modules</li>
  <li>Nest Controllers</li>
