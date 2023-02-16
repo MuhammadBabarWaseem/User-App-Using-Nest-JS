@@ -7,7 +7,7 @@
 <ul>
  <li>Nest Modules</li>
  <li>Nest Controllers</li>
- <li>Craeted Modules & Controllers Through Nest CLI</li>
+ <li>Created Modules & Controllers Through Nest CLI</li>
  <li>Service Provider</li>
  <li>Dependency Injection</li>
  <li>Request Payload</li>
